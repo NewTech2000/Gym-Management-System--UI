@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="1065.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gms.controller.BodyMeasurementController">
+   <children>
+      <JFXButton fx:id="BtnSave" layoutX="642.0" layoutY="528.0" onAction="#BtnSaveOnAction" prefHeight="64.0" prefWidth="143.0" styleClass="greenbuttons" stylesheets="@../assests/ForBlueButtons.css" text="Save">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="BtnDelete" layoutX="811.0" layoutY="526.0" onAction="#BtnDeleteOnAction" prefHeight="64.0" prefWidth="159.0" styleClass="redbuttons" stylesheets="@../assests/ForBlueButtons.css" text="Delete">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </JFXButton>
+      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="333.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Body Measurement" wrappingWidth="451.13671875">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="89.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="123.13671875">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="359.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RID" wrappingWidth="123.13671875">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="89.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight" wrappingWidth="123.13671875">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="570.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Heigth" wrappingWidth="123.13671875">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="TxtScheduleID" fill="WHITE" layoutX="558.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schedule ID" wrappingWidth="167.13671875">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="TxtWeight" focusColor="WHITE" layoutX="212.0" layoutY="326.0" prefHeight="25.0" prefWidth="293.0" unFocusColor="WHITE" />
+      <JFXTextField fx:id="TxtName" focusColor="WHITE" layoutX="212.0" layoutY="253.0" prefHeight="25.0" prefWidth="293.0" unFocusColor="WHITE" />
+      <JFXTextField fx:id="TxtRid" focusColor="WHITE" layoutX="547.0" layoutY="140.0" prefHeight="25.0" prefWidth="293.0" unFocusColor="WHITE" />
+      <JFXTextField fx:id="TxtSchedule" focusColor="WHITE" layoutX="715.0" layoutY="326.0" prefHeight="25.0" prefWidth="293.0" unFocusColor="WHITE" />
+      <JFXTextField fx:id="TxtHeight" focusColor="WHITE" layoutX="700.0" layoutY="256.0" prefHeight="25.0" prefWidth="293.0" unFocusColor="WHITE" />
+   </children>
+</AnchorPane>

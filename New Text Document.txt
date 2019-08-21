@@ -1,0 +1,20 @@
+  if (this.txtusername.getText().equals("admin") && this.txtpassword.getText().equals("admin")) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/lk/ijse/sp/view/home.fxml"));
+                parent root = fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setTitle("Home ");
+                stage.initStyle(StageStyle.DECORATED);
+                stage.setScene(new Scene((Parent)root));
+                stage.show();
+                stage = (Stage)this.btnlogin.getScene().getWindow();
+                stage.close();
+            } catch (Exception var5) {
+                ;
+            }
+        } else {
+            Alert alert = new Alert(AlertType.ERROR, "Incorrect Password OR User Name", new ButtonType[]{ButtonType.OK});
+            alert.show();
+        }
+
+    }

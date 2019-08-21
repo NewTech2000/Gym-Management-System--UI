@@ -1,0 +1,220 @@
+
+drop DATABASE GYM_SYSTEM;
+CREATE DATABASE GYM_SYSTEM;
+USE GYM_SYSTEM;		
+
+
+
+CREATE TABLE member(
+mid varchar(10),
+name varchar(50) NOT NULL,
+address varchar(100) NOT NULL,
+birthday Varchar(100) NOT NULL,
+age Varchar(100)NOT NULL,
+payment varchar(100)NOT NULL,
+CONSTRAINT PRIMARY KEY(mid)
+)engine=innodb;
+
+
+
+INSERT INTO member(mid,name,address,birthday,contact,)
+VALUES('m001','pawan','No:20,england','1998-03-14','0772266363);
+INSERT INTO member(mid,name,address,birthday,contact,)
+VALUES('m002','vidu','No:20,landon','1998-03-14','0772266364);
+INSERT INTO member(mid,name,address,birthday,contact,)
+VALUES('m003','manusha','No:20,australia','1998-03-15','0772266365);
+INSERT INTO member(mid,name,address,birthday,contact,)
+VALUES('m004','adeesha','No:20,melbourne','1998-03-16','0772266366);
+INSERT INTO member(mid,name,address,birthday,contact,)
+VALUES('m005','nimal','No:20,france','1988-03-17','0772266365);
+
+
+
+			
+
+
+CREATE TABLE registration(
+rid varchar(10),
+mid varchar(10),
+name varchar(50) NOT NULL,
+address varchar(100) NOT NULL,
+birthday Varchar(100) NOT NULL,
+age varchar(100)NOT NULL,
+con varchar(20)NOT NULL,
+payment varchar(100)NOT NULL,
+CONSTRAINT PRIMARY KEY(rid)
+
+);
+
+
+INSERT INTO member(rid,mid,name,address,birthday,contact,)
+VALUES('r001','m001','pawan','No:20,england','1998-03-14','0772266363);
+INSERT INTO member(rid,mid,name,address,birthday,contact,)
+VALUES(r002','m002','vidu','No:20,landon','1998-03-14','0772266364);
+INSERT INTO member(rid,mid,name,address,birthday,contact,)
+VALUES('r003','m003','manusha','No:20,australia','1998-03-15','0772266365);
+INSERT INTO member(rid,mid,name,address,birthday,contact,)
+VALUES('r004','m004','adeesha','No:20,melbourne','1998-03-16','0772266366);
+INSERT INTO member(rid,mid,name,address,birthday,gender,age,contact,)
+VALUES('r005','m005','nimal','No:20,france','1988-03-17','0772266365);
+
+
+
+
+			
+
+
+CREATE TABLE payment(
+pid varchar(10),
+rid varchar(10),
+name varchar(50
+) NOT NULL,
+total Varchar (10),
+date Varchar (10),
+CONSTRAINT PRIMARY KEY(pid),
+CONSTRAINT FOREIGN KEY(rid)references Registration(rid)
+on update cascade on delete cascade
+)engine=innodb;
+
+INSERT INTO payment(pid,rid,name,total,date,)
+VALUES('p001','r001','pawan','2500','2019/02/04);
+INSERT INTO Payment(pid,rid,name,total,date,)
+VALUES('p003','r002','roy','2500','2019/04/05);
+INSERT INTO Payment(pid,rid,name,total,date,)
+VALUES('p003','r004','meena','2500','2019/04/09);
+INSERT INTO Payment(pid,rid,name,total,date,)
+VALUES('p005','r006','pala','2500','2019/04/07);
+INSERT INTO Payment(pid,rid,name,total,date,)
+VALUES('p009','r007','dasa','2500','2019/03/24);
+
+
+
+
+
+				
+
+
+CREATE TABLE attendance(
+aid varchar(10),
+rid varchar(10),
+name varchar(50),
+date Varchar (10),
+arrival varchar(20),
+depature varchar(20),
+CONSTRAINT PRIMARY KEY(aid),
+CONSTRAINT FOREIGN KEY(rid)references Registration(rid)
+on update cascade on delete cascade
+)engine=innodb;
+
+
+INSERT INTO attendance(aid,rid,name,date,arrivalTime,depatureTime,)
+VALUES('a001','r002','dasa','2019/03/24','8.00am','10.00am);
+INSERT INTO attendance(aid,rid,name,date,arrivalTime,depatureTime,)
+VALUES('a003','r004','sira','2019/03/23','11.00am','12.00am);
+INSERT INTO attendance(aid,rid,name,date,arrivalTime,depatureTime,)
+VALUES('a005','r006','sara','2019/03/25','1.00pm','3.00am);
+INSERT INTO attendance(aid,rid,name,date,arrivalTime,depatureTime,)
+VALUES('a007','r008','dasa','2019/03/26','3.00pm','4.00pm);
+INSERT INTO attendance(aid,rid,name,date,arrivalTime,depatureTime,)
+VALUES('a003','r009','bola','2019/03/27','4.00pm','6.00pm);
+
+
+
+
+			
+
+
+
+
+CREATE TABLE bodyMeasurement(
+rid varchar(10),
+scheid varchar(10),
+name varchar(50) NOT NULL,
+weigth Varchar(50) ,
+heigth Varchar (10),
+CONSTRAINT PRIMARY KEY(rid)
+)engine=innodb;
+
+
+
+INSERT INTO body measurement(rid,sheid,name,weigth,heigth,)
+VALUES('r001','she001','pawan','50kg','165cm);
+INSERT INTO body measurement(rid,sheid,name,weigth,heigth,)
+VALUES('r002','she002','kamal','60kg','175cm);
+INSERT INTO body measurement(rid,sheid,name,weigth,heigth,)
+VALUES('r003','she003','sunil','70kg','185cm);
+INSERT INTO body measurement(rid,sheid,name,weigth,heigth,)
+VALUES('r004','she004','nimal','80kg','195cm);
+INSERT INTO body measurement(rid,sheid,name,weigth,heigth,)
+VALUES('r005','she009','siri','80kg','196cm);
+
+
+
+
+
+		
+
+
+
+
+
+CREATE TABLE schedule(
+schid varchar(10),
+arms varchar(50)NOT NULL,
+chest Varchar(50)NOT NULL,
+waist Varchar(10)NOT NULL,
+thigh Varchar(10)NOT NULL,
+calf Varchar(10)NOT NULL,
+CONSTRAINT PRIMARY KEY(schid)
+)engine=innodb;
+
+
+
+
+INSERT INTO schedule(schid,bmid,arms,chest,waist,thigh,calf,)
+VALUES('sch001','bm002','35inch','50inch','28inch','30inch','33);
+INSERT INTO schedule(schid,bmid,arms,chest,waist,thigh,calf,)
+VALUES('sch003','bm004','37inch','60inch','29inch','32inch','34);
+INSERT INTO schedule(schid,bmid,arms,chest,waist,thigh,calf,)
+VALUES('sch004','bm005','36inch','70inch','30inch','33inch','35);
+INSERT INTO schedule(schid,bmid,arms,chest,waist,thigh,calf,)
+VALUES('sch005','bm006','39inch','80inch','31inch','34inch','36);
+INSERT INTO schedule(schid,bmid,arms,chest,waist,thigh,calf,)
+VALUES('sch009','bm008','37inch','70inch','28inch','33inch','37);
+
+
+
+
+			
+
+
+
+
+
+
+INSERT INTO supliment(supid,rid,brand,qly)
+VALUES('sup001','r002','anabolyck','good);
+INSERT INTO supliment(supid,rid,brand,qly)
+VALUES('sup003','r0025','megamass','good);
+INSERT INTO supliment(supid,rid,brand,qly)
+VALUES('sup007','r009','veyprotien','good);
+INSERT INTO supliment(supid,rid,brand,qly)
+VALUES('sup006','r008','doublechocalate,'good);
+INSERT INTO supliment(supid,rid,brand,qly)
+VALUES('sup007','r005','c4','normal);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
